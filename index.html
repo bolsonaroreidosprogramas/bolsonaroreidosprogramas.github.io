@@ -1,35 +1,294 @@
-<section class="zzz-section">
-    <h2>Protagonistas da História</h2>
-    
-    <div class="character-grid">
-        <!-- Personagem 1 -->
-        <article class="char-card">
-            <img src="LINK_DA_IMAGEM_AQUI" alt="Belle e Wise" class="char-img">
-            <div class="char-info">
-                <span class="faction">Random Play</span>
-                <h3>Phaethon (Belle/Wise)</h3>
-                <p>Os lendários Mediadores de New Eridu. Eles operam na locadora Random Play e guiam Agentes pelas Esferas Negras usando o sistema HDD.</p>
-            </div>
-        </article>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+       
+        header {
+            background-color: #147411;
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            text-align: center;
+        }
+       
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #2c3e50;
+        }
+       
+        section {
+            width: 100%;
+            flex: 1;
+            background-color: #f0f0f0;
+            display: flex;
+            min-height: 500px;
+            background-color: #219a52;
+            background-image: url(https://xboxwire.thesourcemediaassets.com/sites/8/2025/05/ZZZ-2.0-KV-EN-7d01882c2708ab5bdd7a.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+       
+        #primeiro {
+            width: 20%;
+            height: 50%;
+            padding: 20px;
+            border-right: 1px solid #cccccc;
+        }
+       
+        #segundo {
+            width: 60%;
+            background-color: white;
+            padding: 30px;
+        }
+       
+        #terceiro {
+            background-color: #121212; 
+            padding: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        #terceiro h2 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffff00; 
+            margin-bottom: 30px;
+        }
+        .personagens-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .moldura-agente {
+            background: #1e1e1e;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
 
-        <!-- Personagem 2 -->
-        <article class="char-card">
-            <img src="LINK_DA_IMAGEM_AQUI" alt="Anby Demara" class="char-img">
-            <div class="char-info">
-                <span class="faction">Lebres Astutas</span>
-                <h3>Anby Demara</h3>
-                <p>A força de combate principal das Lebres Astutas no início da trama. Calma e eficiente, ela tem uma conexão misteriosa com técnicas militares.</p>
-            </div>
-        </article>
+        .moldura-agente:hover {
+            transform: translateY(-5px);
+            border-color: #ffff00;
+        }
+        .foto-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1; /* Mantém o quadrado */
+            background-color: #2a2a2a;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #555;
+        }
 
-        <!-- Personagem 3 -->
-        <article class="char-card">
-            <img src="LINK_DA_IMAGEM_AQUI" alt="Ellen Joe" class="char-img">
-            <div class="char-info">
-                <span class="faction">Vitória Service</span>
-                <h3>Ellen Joe</h3>
-                <p>Peça central no arco da Victoria Housekeeping. Uma "maid" tubarão que prefere terminar o trabalho rápido para aproveitar seu tempo livre.</p>
+        .foto-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .nome-agente {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 5px 0;
+            display: block;
+        }
+
+        .faccao-tag {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+       
+        footer {
+            background-color: #13a02a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+       
+        .moeda {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+       
+        .moeda:hover {
+            background-color: #2980b9;
+        }
+       
+        .conversor {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+       
+        input, select, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+        }
+       
+        button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+       
+        button:hover {
+            background-color: #219a52;
+        }
+       
+        .resultado {
+            background-color: #d5f5e3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+       
+        .dica {
+            background-color: #f9e79f;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+       
+        h5 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        strong, h3 {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2><strong>ZZZ</strong> wiki fanmade</h2>
+        <p>Entenda como funciona Zenless zone zero</p>
+    </header>
+   
+    <h1>Historia e desenvolmento</h1>
+   
+    <section>
+        <div id="primeiro">
+            <h3>Prologo</h3>
+            <div class="dica">
+                <strong>Físico (Physical):</strong><br>
+                Ativa a anomalia Assalto. Causa um grande dano físico imediato e interrompe as ações do inimigo. Também aplica o efeito Agressão, que aumenta o dano de atordoamento recebido pelo alvo.
             </div>
-        </article>
-    </div>
-</section>
+            <div class="dica">
+                <strong>Gelo (Ice):</strong><br>
+             Ativa a anomalia Congelamento e Estilhaçar. O inimigo fica imóvel por um tempo; ao final do efeito, ele sofre dano de gelo e tem o dano crítico recebido aumentado (efeito Friagem)..
+            </div>
+            <div class="dica">
+                <strong>Fogo (Fire):</strong><br>
+            Ativa a anomalia Queimadura. Causa dano de fogo contínuo por um período. É especialmente eficaz contra inimigos orgânicos, podendo interromper seus movimentos.
+            </div>
+            <div class="dica">
+                <strong>Elétrico (Electric):</strong><br>
+            Ativa a anomalia Choque. Faz com que o inimigo sofra dano elétrico adicional periodicamente ao ser atacado. É extremamente eficaz contra inimigos mecânicos (robôs), interrompendo-os.
+            </div>
+            <div class="dica">
+                <strong>Éter (Ether):</strong><br>
+            Ativa a anomalia Corrupção. Causa dano de éter adicional ao longo do tempo. É eficaz contra "Etéreos" (monstros dos Ocos), podendo interromper suas ações.
+            </div>
+        </div>
+       
+        <div id="segundo">
+            <h5>Zenless Zone Zero (ZZZ)</h5>
+            <p>Zenless Zone Zero (ZZZ) é um RPG de ação e fantasia urbana desenvolvido pela HoYoverse, mesma criadora de Genshin Impact. O jogo se passa em um mundo pós-apocalíptico onde a civilização foi quase extinta por desastres sobrenaturais chamados Hollows (Vazios), esferas negras que distorcem o espaço e criam monstros conhecidos como Etéreos. Os jogadores controlam os irmãos Wise e Belle, que operam secretamente como "Proxies" (Mediadores) sob o codinome lendário Phaethon, guiando agentes dentro dessas zonas perigosas a partir de sua locadora de vídeo, a Random Play.</p>
+           
+            <h5>Prólogo: Negócios x Estranheza x Justiça</h5>
+           <p><strong>Prólogo introduz a vida dupla dos protagonistas e o encontro crucial com a inteligência artificial Fada (Fairy).</strong></p>
+            <p><strong>A Missão:</strong> Os irmãos são contratados pela facção Cunning Hares (Lepórinos Espertos), liderada por Nicole Demara, para recuperar um cofre valioso roubado pela Gangue Presa Vermelha.</p>
+           <p><strong>O Incidente:</strong> Durante a extração, o sistema de navegação dos protagonistas é hackeado, forçando-os a sacrificar sua conta principal de Proxy para salvar os agentes.</p>
+            <p><strong>A Descoberta: </strong> No cofre, eles encontram a Fada, uma IA de alta tecnologia que se conecta ao sistema deles. Ela concede capacidades de processamento superiores em troca de um contrato, tornando-se uma ferramenta essencial para a exploração de Hollows.</p>
+
+            <h3 style="margin-top: 20px;">Desenvolvimento da História (Resumo dos Capítulos)</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Capítulo 1 (Cat's Lost & Found):</strong>  Foca na conspiração da Corporação Visão, que planejava demolir áreas residenciais ilegalmente. Os protagonistas ajudam a personagem Nekomata e os Cunning Hares a expor o esquema e salvar os moradores locais.</li>
+                <li><strong>Capítulo 2 (Belobog Heavy Industries):</strong> Introduz a facção de construção Belobog. Os Proxies ajudam Koleda e Anton a recuperar máquinas roubadas e enfrentar uma crise envolvendo o protótipo gigante "Hecatoncheir".</li>
+                <li><strong>Desenvolvimento Geral:</strong> Conforme avançam, Wise e Belle descobrem que seu passado e a perda de sua mentora, Carole Arna, estão ligados ao Hollow Zero, o primeiro e mais perigoso desastre que destruiu a antiga capital. </li>
+            </ul>
+           
+           
+       
+            <div id="terceiro">
+                <h2>Agentes Principais</h2>
+                
+                <div class="personagens-container">
+                    
+                    
+                    <div class="moldura-agente">
+                        <div class="foto-placeholder">
+                            <img src="" alt="Billy Kid">
+                        </div>
+                        <span class="nome-agente">Billy Kid</span>
+                        <span class="faccao-tag">Cunning Hares</span>
+                    </div>
+        
+                   
+                    <div class="moldura-agente">
+                        <div class="foto-placeholder">
+                            <img src="" alt="Nicole Demara">
+                        </div>
+                        <span class="nome-agente">Nicole Demara</span>
+                        <span class="faccao-tag">Cunning Hares</span>
+                    </div>
+        
+                    
+                    <div class="moldura-agente">
+                        <div class="foto-placeholder">
+                            <img src="" alt="Anby Demara">
+                        </div>
+                        <span class="nome-agente">Anby Demara</span>
+                        <span class="faccao-tag">Cunning Hares</span>
+                    </div>
+        
+                   
+                    <div class="moldura-agente">
+                        <div class="foto-placeholder">
+                            <img src="" alt="Ellen Joe">
+                        </div>
+                        <span class="nome-agente">Ellen Joe</span>
+                        <span class="faccao-tag">Victoria Housekeeping</span>
+                    </div>
+    </section>
+   
+    <footer>
+        <p>Projeto educacional - Entendendo o jogo ZZZ | Desenvolvido em sala de aula</p>
+    </footer>
+</body>
+</html>
