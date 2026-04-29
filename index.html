@@ -27,7 +27,7 @@
             color: #2c3e50;
         }
        
-        section {
+        #principal {
             width: 100%;
             flex: 1;
             background-color: #f0f0f0;
@@ -38,6 +38,15 @@
             background-repeat: no-repeat;
             background-size: 100%;
         }
+        #secundario{
+            width: 100%;
+            flex: 1;
+            background-color: #f0f0f0;
+            display: flex;
+            min-height: 500px;
+            background-color: #219a52;
+           
+        }
        
         #primeiro {
             width: 20%;
@@ -47,7 +56,7 @@
         }
        
         #segundo {
-            width: 60%;
+            width: 80%;
             background-color: white;
             padding: 30px;
         }
@@ -64,6 +73,13 @@
             letter-spacing: 2px;
             color: #ffff00; 
             margin-bottom: 30px;
+        }
+        #quadrado{
+            width: 20%;
+            height: 50%;
+            padding: 20px;
+            border-left: 1px solid #b32020;
+            background-color: red;
         }
         .personagens-container {
             display: grid;
@@ -117,7 +133,6 @@
             color: #888;
             text-transform: uppercase;
         }
-       
         footer {
             background-color: #13a02a;
             color: white;
@@ -185,7 +200,7 @@
        
         h5 {
             font-size: 24px;
-            color: #2c3e50;
+            color:#2c3e50;
             margin-bottom: 15px;
         }
         strong, h3 {
@@ -203,10 +218,10 @@
     </header>
    
     <h1>Historia e desenvolmento</h1>
-   
-    <section>
+   <section id="secundario">
+    <section id="principal">
         <div id="primeiro">
-            <h3>Prologo</h3>
+            <h3>Prsectionologo</h3>
             <div class="dica">
                 <strong>Físico (Physical):</strong><br>
                 Ativa a anomalia Assalto. Causa um grande dano físico imediato e interrompe as ações do inimigo. Também aplica o efeito Agressão, que aumenta o dano de atordoamento recebido pelo alvo.
@@ -290,7 +305,30 @@
                     </div>
                     
     </section>
-   
+     <div id="quadrado">
+        <h3>Prologo</h3>
+            <div class="dica">
+                <strong>Físico (Physical):</strong><br>
+                Ativa a anomalia Assalto. Causa um grande dano físico imediato e interrompe as ações do inimigo. Também aplica o efeito Agressão, que aumenta o dano de atordoamento recebido pelo alvo.
+            </div>
+            <div class="dica">
+                <strong>Gelo (Ice):</strong><br>
+             Ativa a anomalia Congelamento e Estilhaçar. O inimigo fica imóvel por um tempo; ao final do efeito, ele sofre dano de gelo e tem o dano crítico recebido aumentado (efeito Friagem)..
+            </div>
+            <div class="dica">
+                <strong>Fogo (Fire):</strong><br>
+            Ativa a anomalia Queimadura. Causa dano de fogo contínuo por um período. É especialmente eficaz contra inimigos orgânicos, podendo interromper seus movimentos.
+            </div>
+            <div class="dica">
+                <strong>Elétrico (Electric):</strong><br>
+            Ativa a anomalia Choque. Faz com que o inimigo sofra dano elétrico adicional periodicamente ao ser atacado. É extremamente eficaz contra inimigos mecânicos (robôs), interrompendo-os.
+            </div>
+            <div class="dica">
+                <strong>Éter (Ether):</strong><br>
+            Ativa a anomalia Corrupção. Causa dano de éter adicional ao longo do tempo. É eficaz contra "Etéreos" (monstros dos Ocos), podendo interromper suas ações.
+            </div>
+     </div>
+   </section>
     <footer>
         <p>Projeto educacional - Entendendo o jogo ZZZ | Desenvolvido em sala de aula</p>
     </footer>
